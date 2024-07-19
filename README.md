@@ -44,7 +44,14 @@ npm install express
 
 ## Despliegue del Balanceador de Carga con Nginx
 
-### Paso 5: Configurar los nodos (actualizado)
+### Paso 5: Preparar el Entorno
+1. **Instalar Docker**: Asegúrate de tener Docker instalado en tu máquina. Puedes descargarlo desde [Docker](https://www.docker.com/get-started).
+2. **Crear una Red Docker**: 
+   ```bash
+   docker network create my_network
+   ```
+
+### Paso 6: Configurar los nodos 
 1. **Crear un Dockerfile para los nodos**:
    ```dockerfile
       FROM node:14
@@ -82,7 +89,7 @@ npm install express
 
    ```
 
-#### Paso 6: Configurar Nginx como Balanceador de Carga
+#### Paso 7: Configurar Nginx como Balanceador de Carga
 1. **Crear un archivo de configuración `nginx.conf`**:
    ```nginx
       http {
@@ -146,7 +153,7 @@ npm install express
 
 ### Pruebas de Rendimiento con Apache Bench
 
-#### Paso 4: Realizar Pruebas con Apache Bench
+#### Paso 8: Realizar Pruebas con Apache Bench
 1. **Instalar Apache Bench**: Si no lo tienes instalado, puedes hacerlo con:
    ```bash
    sudo apt-get install apache2-utils

@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "9000:80"  # Exponiendo el puerto 80 del contenedor en el puerto 9000 del host
+    networks:
+      - load_balancer_network
+
+networks:
+  load_balancer_network:
+    external: true
